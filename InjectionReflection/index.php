@@ -4,39 +4,20 @@ namespace App\InjectionReflection;
 include('./BaseClass/Computer.php');
 include('./BaseClass/Laptop.php');
 include('./BaseClass/Desktop.php');
-
+include('./Controllers/DeveloperController.php');
 
 use ReflectionClass;
-use App\InjectionReflection\BaseClass\Computer;
-use App\InjectionReflection\BaseClass\Laptop;
-use App\InjectionReflection\BaseClass\Desktop;
-
-
-class Developer
-{
-    protected $computer;
-
-    public function __construct(Computer $computer, Desktop $desktop)
-    {
-        $this->computer = $computer;
-        var_dump('desktop', $desktop);
-    }
-
-    public function work()
-    {
-        $this->computer->run();
-    }
-}
-
 
 // Binding ở Service Provider
 $binding = [
-    'App\InjectionReflection\BaseClass\Computer' => 'App\InjectionReflection\BaseClass\Laptop', // Khi cần Computer thì trả về Laptop
+    // Khi cần Laptop thì trả về Laptop
+    'App\InjectionReflection\BaseClass\Laptop' => 'App\InjectionReflection\BaseClass\Laptop',
+    // Khi cần Desktop thì trả về Desktop
     'App\InjectionReflection\BaseClass\Desktop' => 'App\InjectionReflection\BaseClass\Desktop', 
 ];
 
 // Sau một công đoạn phức tạp để phân tách URL, Laravel đã tìm được Controller và Action cần thực thi như đây:
-$controllerName = 'App\InjectionReflection\Developer';
+$controllerName = 'App\InjectionReflection\Controllers\DeveloperController';
 $actionName = 'work';
 
 
