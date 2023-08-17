@@ -1,0 +1,10 @@
+{
+    "name": "Include/Composer",
+    "description": "Check Composer Include",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "TrueMe\\": "app/"
+        }
+    }
+}
