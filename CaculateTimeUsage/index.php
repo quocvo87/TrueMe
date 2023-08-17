@@ -12,6 +12,7 @@
 
     echo 'obj1: ------';
     $obj1 = new Computer();
+    $obj1->setMouse('obj1');
     var_dump($obj1);
     echo '</br>';
 
@@ -28,6 +29,7 @@
     echo '---------------';
     echo '</br>';
     echo 'Used: ' . ($m2-$m1);
+    echo '</br>';
     echo '----------------------------------------' . '</br>';
     //clear all
     unset($m1, $m2, $obj1, $obj2);
@@ -50,11 +52,15 @@
 
     echo 'obj2: ------';
     $obj2 = Computer::getInstance();
+    $obj2->setMouse('obj2');
     var_dump($obj2);
 
     echo 'obj3: ------';
     $obj3 = Computer::getInstance();
     var_dump($obj3);
+
+    echo 'Re-read obj1: ------';
+    var_dump($obj1);
 
 
     echo 'Step2---------';
@@ -65,5 +71,6 @@
     echo '---------------';
     echo '</br>';
     echo 'Used: ' . ($m4-$m3);
+    echo '</br>';
     echo '----------------------------------------' . '</br>';
     die;

@@ -17,4 +17,9 @@ class Computer {
     {
         return true;
     }
+
+    public function setMouse($value='')
+    {
+        $this->mouse = $value;
+    }
 }
