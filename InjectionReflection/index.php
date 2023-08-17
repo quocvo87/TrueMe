@@ -26,12 +26,11 @@ $reflectorController = new ReflectionClass($controllerName);
 $constructorParameters = $reflectorController->getConstructor()->getParameters();
 
 $params = []; // Parameters sẽ truyền vào constructor
-
 foreach ($constructorParameters as $parameter) {
-
     $paramClass = $parameter->getClass();
     $paramClass = $paramClass->name;
-    // Với trường hợp này nó sẽ là Computer, nếu không phải Interface/Class name thì nó sẽ là null
+    // Với trường hợp này nó sẽ là Laptop, Desktop...., 
+    // nếu không phải Interface/Class name thì nó sẽ là null
 
     $paramValue = null; // default
     if (!is_null($paramClass) && isset($binding[$paramClass])) {
@@ -42,6 +41,10 @@ foreach ($constructorParameters as $parameter) {
     $params[] = $paramValue;
 }
 
-$controller = $reflectorController->newInstanceArgs($params); // Khởi tạo đối tượng. Tương đương với: $controller = new Developer(new Laptop)
+/*
+ * Khởi tạo đối tượng. Tương đương với: 
+ * $controller = new DeveloperController(new Laptop, new Desktop)
+ */
+$controller = $reflectorController->newInstanceArgs($params); 
 
 $doing = $controller->$actionName(); // Gọi action, tương đương với $controller->work()
