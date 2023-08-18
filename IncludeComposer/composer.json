@@ -1,10 +1,19 @@
 {
-    "name": "Include/Composer",
+    "name": "include/composer",
     "description": "Check Composer Include",
     "type": "project",
     "autoload": {
         "psr-4": {
             "TrueMe\\": "app/"
         }
-    }
+    },
+    "require": {
+        "caculate/timeusage": "dev-master"
+    },
+    "respositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/quocvo87/CaculateTimeUsage.git"
+        }
+    ]
 }

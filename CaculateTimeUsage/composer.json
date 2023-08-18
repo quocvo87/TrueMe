@@ -1,7 +1,8 @@
 {
-    "name": "Caculate/TimeUsage",
+    "name": "caculate/timeusage",
     "description": "Caculate time usage",
     "type": "project",
+    "minimum-stability": "dev",
     "autoload": {
     },
     "require": {
