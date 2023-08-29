@@ -1,11 +1,15 @@
 {
-    "name": "quocvo87/caculatetimeusage",
+    "name": "quocvo87/caculate-time-usage",
     "description": "Caculate time usage",
-    "type": "project",
-    "minimum-stability": "dev",
-    "autoload": {
-    },
+    "type": "library",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Quoc Vo",
+            "email": "quocvo87@gmail.com"
+        }
+    ],
     "require": {
-        
+        "php": ">=5.3.0",
     }
 }

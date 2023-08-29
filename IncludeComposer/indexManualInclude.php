@@ -1,6 +1,6 @@
 <?php
-
-require __DIR__.'/bootstrap/autoload.php';
+include './app/Http/Controllers/ComputerController.php';
+include './app/Libraries/DateSupport.php';
 
 use TrueMe\Http\Controllers\ComputerController;
 $computer = new ComputerController();
