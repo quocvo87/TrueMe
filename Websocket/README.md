@@ -56,41 +56,46 @@ Vào luôn thư mục chat-box gõ lệnh composer require cboden/ratchet để 
 
 
 Nhìn qua nội dung class ta cũng có thể hiểu được ý nghĩa của từng method qua comment bên cạnh, tóm tắt lại thì class này implement các sự kiện của WebSocket đó là onOpen, onMessage, onClose, onError. Tiếp tục ta sẽ tạo một shell script để mở 1 kết nối socket, tạo file script chat_server.php trong thư mục bin/ với nội dung như sau:
+
 -------------------------------
-use Ratchet\Server\IoServer;
-use Ratchet\Http\HttpServer;
-use Ratchet\WebSocket\WsServer;
-use ChatWebSocket\Chat;
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+    use Ratchet\Server\IoServer;
+    use Ratchet\Http\HttpServer;
+    use Ratchet\WebSocket\WsServer;
+    use ChatWebSocket\Chat;
 
-$server = IoServer::factory(
-    new HttpServer(
-        new WsServer(
-            new Chat()
-        )
-    ),
-    8080
-);
-$server->run();
+    require dirname(__DIR__) . '/vendor/autoload.php';
+
+    $server = IoServer::factory(
+        new HttpServer(
+            new WsServer(
+                new Chat()
+            )
+        ),
+        8080
+    );
+    $server->run();
+
 -------------------------------
 
 
 Để chạy đoạn script trên ta chạy lệnh
+
 -------------------------------
-php bin/chat_server.php
+    php bin/chat_server.php
 -------------------------------
 
 Chạy xong câu lệnh đó ta đã mở được 1 connection websocket có thể lắng nghe mọi request trên cổng 8080. Bây giờ ở phía client ta sẽ thử test bằng cách như sau, mở 2 trình duyệt (Ví dụ Chrome và Firefox) lên ấn F12 mở console ra và paste dòng lệnh này vào để khởi tạo connect socket đến server ta đã chạy script ở trên.
--------------------------------
-var conn = new WebSocket('ws://localhost:8080');
-conn.onopen = function(e) {
-    console.log("Connection established!");
-};
 
-conn.onmessage = function(e) {
-    console.log(e.data);
-};
+-------------------------------
+    var conn = new WebSocket('ws://localhost:8080');
+    conn.onopen = function(e) {
+        console.log("Connection established!");
+    };
+
+    conn.onmessage = function(e) {
+        console.log(e.data);
+    };
 -------------------------------
 
 Ở Chrome ta gõ vào console dòng lệnh conn.send('Hello World!'); thì ở bên Firefox message Hello World! sẽ ngay lập tức đc ghi ra console. Bằng cách test như vậy thì ta cũng có thể hiểu cơ bản về cơ chế hoạt động của nó. Giờ thì đến đoạn vẽ hươu vẽ vượn thôi. Thêm một vài đường cơ bản vào file mặt tiền mà ta đã get về ở ngay đâu tiên. Và cuối cùng ta có kết quả như sau: sẽ thấy message chát được broadcast
