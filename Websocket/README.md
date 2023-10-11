@@ -7,7 +7,7 @@ Là một người thích cái đẹp và ưa vẽ vời mình luôn mong muốn
 Vào luôn thư mục chat-box gõ lệnh composer require cboden/ratchet để thêm thư viện vào project. Sau đó ta thêm 1 class (src/ChatWebSocket/Chat.php) với nội dung như sau:
 
 -----------------------
-<?php
+
     namespace ChatWebSocket;
     use Ratchet\MessageComponentInterface;
     use Ratchet\ConnectionInterface;
