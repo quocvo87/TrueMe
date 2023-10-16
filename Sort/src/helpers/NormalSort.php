@@ -66,7 +66,7 @@ class NormalSort
 
     public function sort()
     {
-        /*        $sortArray = [];
+        $sortArray = [];
         foreach($this->results as $result){
             foreach($result as $key=>$value){
                 if(!isset($sortArray[$key])){
@@ -76,17 +76,8 @@ class NormalSort
             }
         }
 
-        array_multisort($sortArray[$this->orderBy], $this->isAsc, $this->results);*/
-
-        usort($this->results, $this);
+        array_multisort($sortArray[$this->orderBy], $this->isAsc, $this->results);
 
         return $this->results;
-    }
-
-    public function __invoke($a, $b)
-    {
-        if ($this->isAsc == SORT_ASC) return $a[$this->orderBy] <=> $b[$this->orderBy];
-
-        return $b[$this->orderBy] <=> $a[$this->orderBy];
     }
 }
