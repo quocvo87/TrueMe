@@ -1,9 +1,7 @@
 <?php
-namespace TrueMe\Libraries;
+namespace YourWeb\Libraries;
 
-use TrueMe\Libraries\StaticMe;
-
-class Process extends StaticMe
+class Process
 {
     public $sum = null;
 
@@ -16,6 +14,7 @@ class Process extends StaticMe
 
         return $this->sum;
     }
+
 
     public function FunctionName($value='')
     {

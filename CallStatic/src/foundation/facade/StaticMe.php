@@ -1,12 +1,11 @@
 <?php
-namespace TrueMe\Libraries;
+namespace TrueMe\Foundation\Facade;
 
 class StaticMe
 {
     public static function __callStatic($method, $args)
     {
-        echo 'ddd';die;
-        $instance = new static();
+        $instance = static::getFacadeAccessor();
 
         if (! $instance) {
             throw new RuntimeException('A facade root has not been set.');
