@@ -37,16 +37,17 @@ Package will help you call all methods as static function
 4. Guide implement call static
 -----------------------
 
-    4.1 You create new class, example D:\YourFolder\CallStatic\yourweb\libraries\Process.php
+    4.1 You create new class, 
+        example D:\YourFolder\CallStatic\yourweb\libraries\Process.php
 
     4.2 You have to create new facade corresponding
-    D:\YourFolder\CallStatic\yourweb\facade\ProcessFacade.php
-    and extends CallStatic class
+            D:\YourFolder\CallStatic\yourweb\facade\ProcessFacade.php and extends CallStatic class
 
     4.3 Register alias 
-    at D:\YourFolder\CallStatic\yourweb\config\alias.php
+        at D:\YourFolder\CallStatic\yourweb\config\alias.php
 
 
-    4.4 Run test file D:\YourFolder\CallStatic\yourweb\index.php for test, you will Process call static sumAll()
+    4.4 Run test file D:\YourFolder\CallStatic\yourweb\index.php
+        for test, you will Process call static sumAll()
 -----------------------
 
