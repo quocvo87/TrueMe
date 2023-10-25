@@ -1,7 +1,8 @@
-1. Introduction
+|1. Introduction
+----------------
 Package will help you call all methods as static function
 
-2. Directory Struct
+|2. Directory Struct
 -----------------------
 
     Root
@@ -22,7 +23,7 @@ Package will help you call all methods as static function
 -----------------------
 
 
-3. Step by step do it
+|3. Step by step do it
 -----------------------
 
     3.1 Clone/download CallStatic folder to your computer
@@ -34,7 +35,7 @@ Package will help you call all methods as static function
     3.4 Run file D:\YourFolder\CallStatic\index.php for test
 -----------------------
 
-4. Guide implement call static
+|4. Guide implement call static
 -----------------------
 
     4.1 You create new class, 
